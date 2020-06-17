@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Homework</title>
+</head>
+<body>
+    <!-- Создайте 5 блоков с текстом. Добавьте в каждый из блоков кнопку для его удаления.
+    Используйте только один обработчик. -->
+
+
+
+        <div>Блок 1<input type="button" value="Удалить"></div>
+        <div>Блок 2<input type="button" value="Удалить"></div>
+        <div>Блок 3<input type="button" value="Удалить"></div>
+        <div>Блок 4<input type="button" value="Удалить"></div>
+        <div>Блок 5<input type="button" value="Удалить"></div>
+
+        <script>
+            var list = document.body.querySelectorAll("div input");
+            for (var i = 0; i < list.length; i++) {
+                list[i].parentElement.addEventListener("click", delBut);
+            }
+            function delBut() {
+                this.innerHTML = ""
+            }
+        </script>
+
+
+</body>
+</html>

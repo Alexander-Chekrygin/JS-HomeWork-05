@@ -1,0 +1,47 @@
+<!--
+Создайте ссылку и див с текстом внутри, который изначально при загрузке страницы будет скрыт.
+При клике на ссылку див появляется, если повторно нажать ссылку див и текст должны пропасть.
+Также создайте кнопку, которая будет отменять выполнение обработчика клика по ссылке.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: none;
+        }
+
+        .showTheRick {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">Ссылка</a>
+    <div>
+        <iframe src="https://robymgood.com/wp-content/uploads/2019/06/HTML5_CSS_JavaScript.jpg" width="500" height="360" frameBorder="0" class="giphy-embed"
+            allowFullScreen></iframe>
+        <p></p>
+    </div>
+    <input id="terminateRick" type="button" value="Отмена">
+    <script>
+        var link = document.querySelector("a");
+        function showRick() {
+            var findDiv = document.querySelector("div");
+            findDiv.classList.toggle("showTheRick");
+        }
+        link.addEventListener("click", showRick);
+        var term = document.querySelector("#terminateRick");
+        term.addEventListener("click", terminate);
+        function terminate() {
+            link.removeEventListener("click", showRick)
+        }
+    </script>
+</body>
+
+</html>
